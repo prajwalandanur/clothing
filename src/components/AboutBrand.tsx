@@ -2,14 +2,7 @@ import { motion } from "framer-motion";
 
 export function AboutBrand() {
   return (
-    <section className="grain relative overflow-hidden py-24 sm:py-32">
-      {/* Background gradient */}
-      <div
-        className="absolute inset-0 opacity-30"
-        style={{
-          background: "radial-gradient(circle at 30% 50%, oklch(0.85 0.2 140 / 10%) 0%, transparent 50%)",
-        }}
-      />
+    <section className="relative overflow-hidden py-24 sm:py-32">
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid items-center gap-12 lg:grid-cols-2">
@@ -26,7 +19,7 @@ export function AboutBrand() {
             <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">
               Not Just Fashion.
               <br />
-              <span className="text-gradient-neon">A Movement.</span>
+              <span className="text-gradient-accent">A Movement.</span>
             </h2>
             <p className="mt-6 font-body text-base leading-relaxed text-muted-foreground sm:text-lg">
               We Create Trends is born from India&apos;s evolving street culture — where anime aesthetics
@@ -60,11 +53,11 @@ export function AboutBrand() {
                 className="absolute inset-0"
                 style={{
                   background:
-                    "linear-gradient(135deg, oklch(0.2 0.02 270), oklch(0.12 0.01 270))",
+                    "linear-gradient(135deg, oklch(0.95 0 0), oklch(0.9 0 0))",
                 }}
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
-                <span className="font-display text-7xl font-bold text-foreground/5 sm:text-9xl">
+                <span className="font-display text-7xl font-bold text-foreground/8 sm:text-9xl">
                   WCT
                 </span>
                 <div className="mt-4 space-y-2">

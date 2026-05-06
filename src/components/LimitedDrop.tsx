@@ -29,9 +29,9 @@ export function LimitedDrop() {
       <motion.div
         animate={{
           background: [
-            "linear-gradient(135deg, oklch(0.15 0.02 330), oklch(0.1 0.005 270))",
-            "linear-gradient(135deg, oklch(0.15 0.02 140), oklch(0.1 0.005 270))",
-            "linear-gradient(135deg, oklch(0.15 0.02 330), oklch(0.1 0.005 270))",
+            "linear-gradient(135deg, oklch(0.96 0 0), oklch(0.93 0 0))",
+            "linear-gradient(135deg, oklch(0.93 0.01 30), oklch(0.96 0 0))",
+            "linear-gradient(135deg, oklch(0.96 0 0), oklch(0.93 0 0))",
           ],
         }}
         transition={{ duration: 8, repeat: Infinity }}
