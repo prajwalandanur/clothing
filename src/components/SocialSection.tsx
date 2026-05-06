@@ -1,12 +1,19 @@
 import { motion } from "framer-motion";
 
+import streetStyleImg from "@/assets/social/street-style.jpg";
+import newDropImg from "@/assets/social/new-drop.jpg";
+import animeVibesImg from "@/assets/social/anime-vibes.jpg";
+import fusionImg from "@/assets/social/fusion.jpg";
+import behindScenesImg from "@/assets/social/behind-scenes.jpg";
+import streetCultureImg from "@/assets/social/street-culture.jpg";
+
 const gridItems = [
-  { bg: "linear-gradient(135deg, oklch(0.3 0.08 330), oklch(0.18 0.04 270))", label: "Street Style" },
-  { bg: "linear-gradient(135deg, oklch(0.35 0.1 140), oklch(0.18 0.04 270))", label: "New Drop" },
-  { bg: "linear-gradient(135deg, oklch(0.3 0.08 40), oklch(0.18 0.04 270))", label: "Anime Vibes" },
-  { bg: "linear-gradient(135deg, oklch(0.3 0.08 200), oklch(0.18 0.04 270))", label: "Fusion" },
-  { bg: "linear-gradient(135deg, oklch(0.35 0.1 290), oklch(0.18 0.04 270))", label: "Behind the Scenes" },
-  { bg: "linear-gradient(135deg, oklch(0.3 0.08 60), oklch(0.18 0.04 270))", label: "Street Culture" },
+  { image: streetStyleImg, label: "Street Style" },
+  { image: newDropImg, label: "New Drop" },
+  { image: animeVibesImg, label: "Anime Vibes" },
+  { image: fusionImg, label: "Fusion" },
+  { image: behindScenesImg, label: "Behind the Scenes" },
+  { image: streetCultureImg, label: "Street Culture" },
 ];
 
 export function SocialSection() {
@@ -38,7 +45,7 @@ export function SocialSection() {
               whileHover={{ scale: 1.05, zIndex: 10 }}
               className="group relative aspect-square cursor-pointer overflow-hidden rounded-xl"
             >
-              <div className="absolute inset-0" style={{ background: item.bg }} />
+              <img src={item.image} alt={item.label} loading="lazy" width={640} height={640} className="absolute inset-0 h-full w-full object-cover" />
               <div className="absolute inset-0 flex items-center justify-center bg-background/0 transition-colors group-hover:bg-background/40">
                 <span className="font-body text-xs font-medium tracking-wider text-foreground opacity-0 transition-opacity group-hover:opacity-100">
                   {item.label}
