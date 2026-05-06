@@ -1,8 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "@tanstack/react-router";
 import { useStore } from "@/lib/store";
 
 export function CartDrawer() {
   const { cart, cartOpen, setCartOpen, removeFromCart, updateQuantity, cartTotal } = useStore();
+  const navigate = useNavigate();
 
   return (
     <AnimatePresence>
@@ -120,6 +122,10 @@ export function CartDrawer() {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
+                    onClick={() => {
+                      setCartOpen(false);
+                      navigate({ to: "/checkout" });
+                    }}
                     className="w-full rounded-full bg-primary py-3.5 font-display text-sm font-bold tracking-wider text-primary-foreground uppercase glow-neon"
                   >
                     Checkout

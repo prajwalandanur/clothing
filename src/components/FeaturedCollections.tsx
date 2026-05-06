@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
+import { Link } from "@tanstack/react-router";
 import { collections } from "@/lib/products";
 
-const collectionImages = [
-  "linear-gradient(135deg, oklch(0.3 0.05 270), oklch(0.15 0.02 270))",
-  "linear-gradient(135deg, oklch(0.6 0.2 25), oklch(0.3 0.1 350))",
-  "linear-gradient(135deg, oklch(0.5 0.15 170), oklch(0.25 0.08 200))",
-  "linear-gradient(135deg, oklch(0.4 0.12 280), oklch(0.2 0.06 300))",
-  "linear-gradient(135deg, oklch(0.85 0.2 140), oklch(0.4 0.1 160))",
-  "linear-gradient(135deg, oklch(0.7 0.18 40), oklch(0.35 0.1 20))",
-];
+import streetwearImg from "@/assets/collections/streetwear.jpg";
+import animeTeesImg from "@/assets/collections/anime-tees.jpg";
+import indianFusionImg from "@/assets/collections/indian-fusion.jpg";
+import hoodiesImg from "@/assets/collections/hoodies.jpg";
+import newDropsImg from "@/assets/collections/new-drops.jpg";
+import bestSellersImg from "@/assets/collections/best-sellers.jpg";
+
+const collectionImages = [streetwearImg, animeTeesImg, indianFusionImg, hoodiesImg, newDropsImg, bestSellersImg];
 
 export function FeaturedCollections() {
   return (
@@ -30,19 +31,27 @@ export function FeaturedCollections() {
 
         <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
           {collections.map((collection, i) => (
-            <motion.button
+            <Link
               key={collection.slug}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              whileHover={{ scale: 1.02, rotateX: 2, rotateY: -2 }}
-              className="group relative overflow-hidden rounded-2xl"
-              style={{ perspective: "800px" }}
+              to="/collections/$slug"
+              params={{ slug: collection.slug }}
+              className="group relative overflow-hidden rounded-2xl block"
             >
-              <div
-                className="aspect-[4/3] w-full transition-transform duration-500 group-hover:scale-110"
-                style={{ background: collectionImages[i] }}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="relative"
+                style={{ perspective: "800px" }}
+              >
+              <img
+                src={collectionImages[i]}
+                alt={collection.name}
+                loading="lazy"
+                width={768}
+                height={576}
+                className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
               <div className="absolute inset-0 flex flex-col items-center justify-end p-4 sm:p-6">
@@ -52,13 +61,10 @@ export function FeaturedCollections() {
                 <span className="mt-1 font-body text-xs text-muted-foreground">
                   {collection.count} Products
                 </span>
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileHover={{ width: "3rem" }}
-                  className="mt-2 h-0.5 bg-primary"
-                />
+                <div className="mt-2 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-12" />
               </div>
-            </motion.button>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>
