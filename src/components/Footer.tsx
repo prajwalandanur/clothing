@@ -89,7 +89,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <span className="font-display text-sm font-bold tracking-wider text-foreground">
-            WE CREATE <span className="text-gradient-neon">TRENDS</span>
+            WE CREATE TRENDS
           </span>
           <div className="flex gap-6">
             {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (

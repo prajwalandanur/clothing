@@ -41,7 +41,7 @@ export function Navbar() {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2">
               <span className="font-display text-lg font-bold tracking-wider text-foreground sm:text-xl">
-                WE CREATE <span className="text-gradient-neon">TRENDS</span>
+                WE CREATE TRENDS
               </span>
             </Link>
 
